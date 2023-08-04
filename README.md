@@ -1,7 +1,7 @@
 # cipher_cesar
 cipher of cesar - encrypt &amp; decrypt
 
-#Introduction
+# Introduction
 
 This program is developed by Matheus Rodrigues for study propose.
 the main functions is: encrypt and decrypt a message
