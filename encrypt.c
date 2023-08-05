@@ -5,14 +5,16 @@
 #include <ctype.h>
 #include "mode.h"
 
+//prototype
+void encrypt(char msg[], int key);
+
 int main(){
 
-	char nome[] = {"matheus"};
+	char nome[] = {"MATHEUS"};
 	
 	printf("input: %s\n", nome);
-
+	encrypt(nome, 2);
 	
-
 
 	return 0;
 }
@@ -21,17 +23,22 @@ int main(){
 void encrypt(char msg[], int key){
 
 	char ASCII[] = {" ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-	int ASCII_SIZE = sizeof(ASCII) / sizeof(0);
 	char c_msg[N];
 
-	/*for(int i = 0; ; i++){
-	
-		c_msg[i] = ASCII[strcspn(ASCII, msg[i]) + key];		
-	}*/ // erro:
+	int size_A = sizeof(ASCII) / sizeof(ASCII[0]); //tamanho utilizado
 
-	for(int i = 0; ){
-	
+	for(int i = 0; msg[i] != '\0'; i++){
+		if(isalpha(msg[i]) || msg[i] == '\n'){
+			for(int j = 0; j < size_A; j++){
+				if(msg[i] == ASCII[j]){
+					c_msg[i] = ASCII[((j+key) + size_A) % size_A ];
+					fflush(stdin);
+				}
+			}
+		}
+		
 	}
-	printf("output: %s", c_msg);
+
+	printf("output: %s\n", c_msg);
 
 }

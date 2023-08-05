@@ -1,7 +1,7 @@
 // ############ Arquivos de Header/Apoio #############
-//include decrypt.c
-//include encrypty.c
+//include encrypt.c
 
 #define N 150
 
+void encrypt(char msg[], int key);
 

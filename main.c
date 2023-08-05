@@ -32,7 +32,7 @@ int main(){
 			getKey = enterKey(getKey);
 			clear_buffer();
 			//printf("output: %s\n", msg);//test
-			//encrypt(msg, getKey)
+			encrypt(msg, getKey);
 			break;
 		case 2:
 			system("clear");
