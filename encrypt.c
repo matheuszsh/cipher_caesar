@@ -11,24 +11,28 @@
 void encrypt(char msg[], int key){
 
 	char ASCII[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-	char c_msg[N];
+	char c_msg[N] = "";
 
 	int size_A = sizeof(ASCII) / sizeof(ASCII[0]); //tamanho utilizado
 
-	for(int i = 0; i <= size_A; i++){
+	for(int i = 0; msg[i] != '\0'; i++){
 		if(isalpha(msg[i])){
 			for(int j = 0; j < size_A; j++){
 				if(toupper(msg[i]) == ASCII[j]){
-					c_msg[i] = ASCII[((j+key) + size_A) % size_A ];
 					fflush(stdin);
+					c_msg[i] = ASCII[(j+key) % size_A ];
 					printf("%i\n", i);
 					break;
-				}}
+				}
 			}
+		}
+		else{
+			c_msg[i] = msg[i];
+			printf("Else case: %i\n", i);
+			continue;
 		}
 		
 	}
-
 	printf("output: %s\n", c_msg);
-
+	printf("\n~VERSÂO TESTE DO MODULO encrypt.c~\n");
 }
