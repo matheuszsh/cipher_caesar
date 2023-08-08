@@ -31,7 +31,7 @@ int main(){
 			functionGetMsg(msg);
 			getKey = enterKey(getKey);
 			clear_buffer();
-			//printf("output: %s\n", msg);//test
+			printf("input: %s\n", msg);//test
 			encrypt(msg, getKey);
 			break;
 		case 2:
@@ -88,9 +88,9 @@ void functionGetMsg(char msg[]){
 	msg[strcspn(msg, "\n")] = '\0';
 
 	//Change char msg to upper
-	for(int i = 0; msg[i] != '\0'; i++){
+	/*for(int i = 0; i < strlen(msg); i++){
 		msg[i] = toupper(msg[i]);
-	}
+	}*/
 	
 }
 

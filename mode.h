@@ -1,5 +1,5 @@
 // ############ Arquivos de Header/Apoio #############
-//include encrypt.c
+//#include <encrypt.c>
 
 #define N 150
 
