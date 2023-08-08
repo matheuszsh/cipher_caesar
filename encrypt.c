@@ -23,11 +23,7 @@ void encrypt(char msg[], int key){
 					fflush(stdin);
 					printf("%i\n", i);
 					break;
-				}
-				else if(msg[i] == '\n'){
-					msg[i] = '\n';
-					break;
-				}
+				}}
 			}
 		}
 		
