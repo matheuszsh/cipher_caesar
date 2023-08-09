@@ -40,6 +40,8 @@ int main(){
 			functionGetMsg(msg);
 			getKey = enterKey(getKey);
 			clear_buffer();
+			printf("input: %s\n", msg);//test
+			decrypt(msg, getKey);
 			break;
 		default:
 			system("clear");
