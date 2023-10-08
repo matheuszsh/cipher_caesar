@@ -5,9 +5,11 @@
 #include <ctype.h>
 #include "mode.h"
 
+//protótipos de funções
 void showArt();
 void clear_buffer();
 int getOption(int option);
+int useInAFileOption(int option);
 void functionGetMsg(char msg[]);
 int enterKey(int key);
 
@@ -24,25 +26,25 @@ int main(){
 	clear_buffer();
 
 	switch(option){
-	
+		//acessa modo Encriptar
 		case 1:
 			system("clear");
 			showArt();
 			functionGetMsg(msg);
 			getKey = enterKey(getKey);
 			clear_buffer();
-			printf("input: %s\n", msg);//test
 			encrypt(msg, getKey);
 			break;
+		//acessa modo Decriptar
 		case 2:
 			system("clear");
 			showArt();
 			functionGetMsg(msg);
 			getKey = enterKey(getKey);
 			clear_buffer();
-			printf("input: %s\n", msg);//test
 			decrypt(msg, getKey);
 			break;
+		//em caso de não houver opção
 		default:
 			system("clear");
 			showArt();
@@ -51,6 +53,7 @@ int main(){
 	}
 }
 
+//Arte do menu do programa
 void showArt(){
 
 	printf("VERSION 1.0\n");
@@ -66,36 +69,33 @@ void showArt(){
 
 }
 
+//seleciona a opção
 int getOption(int option){
 	printf("\nENTER OPTION:\n\n");
-        printf("(1)Encrypt\n(2)Decrypt\n\n");
+        printf("(1)Encrypt\n(2)Decrypt\n");
 	printf(">>>:");
 	scanf("%i", &option);
 	
 	return option; 
 }
 
+//Limpa o buffer de input
 void clear_buffer(){
     int c;
     while ((c = getchar()) != '\n' && c != EOF) {}
 }
 
+//Função pra pegar a mensagem
 void functionGetMsg(char msg[]){
-	
-	//int msgUpper[N];
 
 	printf("Input the Message: ");
 	fgets(msg, N, stdin);
 
 	msg[strcspn(msg, "\n")] = '\0';
-
-	//Change char msg to upper
-	/*for(int i = 0; i < strlen(msg); i++){
-		msg[i] = toupper(msg[i]);
-	}*/
 	
 }
 
+//Recebe a chave de deslocamento
 int enterKey(int key){
 
 	printf("KEY NUMBER: ");

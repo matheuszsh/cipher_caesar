@@ -1,0 +1,7 @@
+
+
+Para fazer uso adequado desse programa, siga os passos:
+
+1 - compilar o arquivo construir.c: comando: gcc construir.c -o construir
+2 - verficiar o arquivo gerado
+3 - executar o arquivo gerado: ./construir
