@@ -1,5 +1,5 @@
-# cipher_cesar
-cipher of cesar - encrypt &amp; decrypt
+# cipher_ceasar
+cipher of ceasar - encrypt &amp; decrypt
 
 # Introduction
 
