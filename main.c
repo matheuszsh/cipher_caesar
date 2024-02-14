@@ -25,29 +25,23 @@ int main(){
 	option = getOption(option);
 	clear_buffer();
 
+	system("clear");
+	showArt();
+	functionGetMsg(msg);
+	getKey = enterKey(getKey);
+	clear_buffer();
+	
 	switch(option){
 		//acessa modo Encriptar
 		case 1:
-			system("clear");
-			showArt();
-			functionGetMsg(msg);
-			getKey = enterKey(getKey);
-			clear_buffer();
 			encrypt(msg, getKey);
 			break;
 		//acessa modo Decriptar
 		case 2:
-			system("clear");
-			showArt();
-			functionGetMsg(msg);
-			getKey = enterKey(getKey);
-			clear_buffer();
 			decrypt(msg, getKey);
 			break;
 		//em caso de não houver opção
 		default:
-			system("clear");
-			showArt();
 			printf("Something is wrong, select option again.\n");
 			break;
 	}
